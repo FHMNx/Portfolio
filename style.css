@@ -523,3 +523,41 @@ html[data-theme="light"] .syntax {
     animation: none !important;
   }
 }
+
+
+/* ===== Performance Mode for Mobile ===== */
+@media (max-width: 768px) {
+  /* disable heavy fixed backgrounds */
+  .bg-watermarks,
+  .bg-blobs {
+    display: none;
+  }
+
+  /* reduce blur cost */
+  .blob {
+    filter: none !important;
+    opacity: 0.18;
+    animation: none !important;
+  }
+
+  /* reduce expensive backdrop blur */
+  .glass,
+  .mobile-card,
+  .proj-btn,
+  .theme-switch {
+    backdrop-filter: none !important;
+  }
+
+  /* ring animation can be heavy */
+  .ring-animated {
+    animation: none !important;
+  }
+
+  /* make hover effects cheaper (phones don't need it) */
+  .project-card:hover,
+  .contact-icon:hover,
+  .footer-icon:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
