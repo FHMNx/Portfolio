@@ -1,725 +1,853 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fahman - Full-stack Software Engineer</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fahman - Full-stack Software Engineer</title>
+    <link
+      rel="shortcut icon"
+      href="./readme-images/F.svg"
+      type="image/svg+xml"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- 
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./readme-images/F.svg" type="image/svg+xml">
+    <!-- Tailwind CDN (still ok for layout utilities) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+              mulish: ["Mulish", "sans-serif"],
+            },
+            colors: {
+              purpleA: "#a855f7",
+              purpleB: "#7c3aed",
+            },
+          },
+        },
+      };
+    </script>
 
-  <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preload" as="image" href="fahman.png" />
+  </head>
 
-  <!-- 
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mulish&family=Poppins:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
-
-  <!-- 
-    - preload images
-  -->
-  <link rel="preload" as="image" href="fahman.png">
-
-</head>
-
-<body>
-
-  <!-- 
-    - #HEADER
-  -->
-
-  <header class="header" data-header>
-    <div class="container">
-
-      <a href="#" class="logo">Fahman</a>
-
-      <nav class="navbar" data-navbar>
-        <ul class="navbar-list">
-
-          <li>
-            <a href="#home" class="navbar-link" data-nav-link>Home</a>
-          </li>
-
-          <li>
-            <a href="#aboutme" class="navbar-link" data-nav-link>About Me</a>
-          </li>
-
-          <li>
-            <a href="#portfolio" class="navbar-link" data-nav-link>Portfolio</a>
-          </li>
-
-          <li>
-            <a href="#skills" class="navbar-link" data-nav-link>Skills</a>
-          </li>
-
-          <li>
-            <a href="#timeline" class="navbar-link" data-nav-link>Timeline</a>
-          </li>
-
-          <li>
-            <a href="#price" class="navbar-link" data-nav-link>Services</a>
-          </li>
-
-          <li>
-            <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
-          </li>
-
-        </ul>
-      </nav>
-
-      <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
-        <span class="line line-1"></span>
-        <span class="line line-2"></span>
-        <span class="line line-3"></span>
-      </button>
-
+  <body class="font-mulish bg-[color:var(--bg)] overflow-x-hidden">
+    <!-- Watermarks + Blobs -->
+    <div class="bg-watermarks" aria-hidden="true">
+      <span class="wm wm-1">FAHMAN</span>
+      <span class="wm wm-2">FULL STACK</span>
+      <span class="wm wm-3">SECURE</span>
+      <span class="wm wm-4">BUILD</span>
     </div>
-  </header>
 
-
-
-
-
-  <main>
-    <article>
-
-      <!-- 
-        - #HERO
-      -->
-
-      <section class="section hero" id="home" aria-label="hero">
-        <div class="container">
-
-          <figure class="hero-banner img-holder has-before" style="--width: 640; --height: 840;">
-            <img src="me.jpg" width="640" height="840" alt="Bernard Smith" class="img-cover">
-          </figure>
-
-          <div class="hero-content">
-
-            <p class="section-subtitle">Abdhullah Fahman</p>
-
-            <h1 class="h1 hero-title">Turning Ideas into Code <span style="color: orangered;">Software Engineer</span></h1>
-
-            <ul class="hero-list">
-
-              <li>
-                <a href="#" class="list-link">
-                  <span class="span">Full-Stack Development</span>
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="list-link">
-                  <span class="span">POS & Business Systems</span>
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="list-link">
-                  <span class="span">Desktop Applications</span>
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                </a>
-              </li>
-
-            </ul>
-
-            <ul class="exp-list">
-
-              <li class="list-item">
-                <strong class="strong">1.5+</strong>
-
-                <span class="span">
-                  Years of<br>
-                  Experience
-                </span>
-              </li>
-
-              <li class="list-item">
-                <strong class="strong">04+</strong>
-
-                <span class="span">
-                  Successful<br>
-                  Projects
-                </span>
-              </li>
-
-            </ul>
-
-            <a href="#aboutme" class="slide-down-btn" aria-label="scroll down">
-              <ion-icon name="arrow-down" aria-hidden="true"></ion-icon>
-            </a>
-
-          </div>
-
-        </div>
-      </section>
-
-
-
-
-      <!-- 
-        - About Me
-      -->
-
-  <section class="section about" id="aboutme" aria-label="about">
-  <div class="container">
-
-    <p class="section-subtitle">About Me</p>
-
-    <h2 class="h2 section-title">Who I Am</h2>
-
-    <p class="about-text">
-      I’m a passionate Full Stack Software Engineering student with a strong interest in cybersecurity and ethical hacking. 
-      I’m developing solid skills across both front-end and back-end technologies, aiming to build secure and scalable applications. 
-      Currently, I’m exploring the full spectrum of software development from UI/UX design to server-side architecture while 
-      actively engaging in penetration testing and bug bounty programs to uncover vulnerabilities and enhance system security. 
-      My goal is to bridge development and cybersecurity by creating solutions that are not only functional but also resilient 
-      against real-world threats.
-    </p>
-
-  </div>
-</section>
-
-
-
-
-
-
-      <!-- 
-        - #PORTFOLIO
-      -->
-
-      <section class="section portfolio" id="portfolio" aria-label="portfolio">
-        <div class="container">
-
-          <p class="section-subtitle">Crafted with Code</p>
-
-          <h2 class="h2 section-title">Projects Showcase</h2>
-
-          <ul class="has-scrollbar">
-
-            <li class="scrollbar-item">
-              <div class="card">
-
-                <figure class="card-banner img-holder" style="--width: 00; --height: 200;">
-                  <img src="poomo.png" width="300" height="200" loading="lazy" alt="Magic Art"
-                    class="img-cover">
-                </figure>
-
-                <a href="#" class="card-content">
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-
-                  <h3 class="h3 card-title">Poomo</h3>
-
-                  <p class="card-text">E-Commerce</p>
-
-                </a>
-
-              </div>
-            </li>
-
-            <li class="scrollbar-item">
-              <div class="card">
-
-                <figure class="card-banner img-holder" style="--width: 00; --height: 200;">
-                  <img src="greek.png" width="300" height="200" loading="lazy" alt="Bona Green"
-                    class="img-cover">
-                </figure>
-
-                <a href="#" class="card-content">
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-
-                  <h3 class="h3 card-title">Greek</h3>
-
-                  <p class="card-text">Clothing Shop</p>
-
-                </a>
-
-              </div>
-            </li>
-
-           <li class="scrollbar-item">
-              <div class="card">
-
-                <figure class="card-banner img-holder" style="--width: 00; --height: 200;">
-                  <img src="foodmart.png" width="300" height="200" loading="lazy" alt="Bona Green"
-                    class="img-cover">
-                </figure>
-
-                <a href="" class="card-content">
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-
-                  <h3 class="h3 card-title">Food Mart</h3>
-
-                  <p class="card-text">E-Commerce</p>
-
-                </a>
-
-              </div>
-            </li>
-
-             <li class="scrollbar-item">
-              <div class="card">
-
-                <figure class="card-banner img-holder" style="--width: 00; --height: 200;">
-                  <img src="vanane.png" width="300" height="200" loading="lazy" alt="Bona Green"
-                    class="img-cover">
-                </figure>
-
-                <a href="#" class="card-content">
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-
-                  <h3 class="h3 card-title">Vanane Biznet</h3>
-
-                  <p class="card-text">Freelance</p>
-
-                </a>
-
-              </div>
-            </li>
-
-            <li class="scrollbar-item">
-              <div class="card">
-
-                <figure class="card-banner img-holder" style="--width: 00; --height: 200;">
-                  <img src="kns.png" width="300" height="200" loading="lazy" alt="Bona Green"
-                    class="img-cover">
-                </figure>
-
-                <a href="#" class="card-content">
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-
-                  <h3 class="h3 card-title">KNS</h3>
-
-                  <p class="card-text">School web App</p>
-
-                </a>
-
-              </div>
-            </li>
-
-            
-            <li class="scrollbar-item">
-              <div class="card">
-
-                <figure class="card-banner img-holder" style="--width: 00; --height: 200;">
-                  <img src="fashion.png" width="300" height="200" loading="lazy" alt="Bona Green"
-                    class="img-cover">
-                </figure>
-
-                <a href="#" class="card-content">
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-
-                  <h3 class="h3 card-title">Fashion Limitless</h3>
-
-                  <p class="card-text">Clothing Shop</p>
-
-                </a>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #SKILLS
-      -->
-
-      <section class="section skills has-before" id="skills" aria-label="skills"
-        style="background-image: url('skills-bg.png')">
-        <div class="container">
-
-          <div class="skills-content">
-
-            <p class="section-subtitle">Skills</p>
-
-            <h2 class="h2 section-title">Programming Skills</h2>
-
-            <p class="section-text">
-             As a Software Engineering undergraduate, I focus on building modern web applications, desktop solutions, and POS systems. 
-             I work with both front-end and back-end technologies and enjoy learning new tools in software development and cybersecurity.
-            </p>
-
-            <ul class="skills-list">
-
-              <li class="skills-item">
-                <div class="wrapper">
-                  <h3 class="skill-title">HTML & CSS</h3>
-
-                  <data class="skill-value" value="95%">95%</data>
-                </div>
-
-                <div class="progress-box">
-                  <div class="progress" style="width: 95%"></div>
-                </div>
-              </li>
-
-              <li class="skills-item">
-                <div class="wrapper">
-                  <h3 class="skill-title">JavaScript</h3>
-
-                  <data class="skill-value" value="80%">80%</data>
-                </div>
-
-                <div class="progress-box">
-                  <div class="progress" style="width: 80%"></div>
-                </div>
-              </li>
-
-              <li class="skills-item">
-                <div class="wrapper">
-                  <h3 class="skill-title">Java & PHP</h3>
-
-                  <data class="skill-value" value="90%">85%</data>
-                </div>
-
-                <div class="progress-box">
-                  <div class="progress" style="width: 90%"></div>
-                </div>
-              </li>
-
-               <li class="skills-item">
-                <div class="wrapper">
-                  <h3 class="skill-title">SQL / MySQL</h3>
-
-                  <data class="skill-value" value="90%">95%</data>
-                </div>
-
-                <div class="progress-box">
-                  <div class="progress" style="width: 90%"></div>
-                </div>
-              </li>
-
-              <li class="skills-item">
-                <div class="wrapper">
-                  <h3 class="skill-title">Arduino & Laravel</h3>
-
-                  <data class="skill-value" value="90%">70%</data>
-                </div>
-
-                <div class="progress-box">
-                  <div class="progress" style="width: 90%"></div>
-                </div>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <div class="skills-banner has-before"></div>
-
-        </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #TIMELINE
-      -->
-
-      <section class="section timeline" id="timeline" aria-label="timeline">
-        <div class="container">
-
-          <p class="section-subtitle">Timeline</p>
-
-          <h2 class="h2 section-title">Education Timeline</h2>
-
-          <ul class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h3 class="item-period">January 14 – August 2</h3>
-
-              <p class="item-title">Primary & Secondary Education</p>
-
-              <p class="item-address">Zahira Boys College, Kandy</p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h3 class="item-period">August 3 – November 20</h3>
-
-              <p class="item-title">GCE Ordinary Level (O/L)</p>
-
-              <p class="item-address">St. Sylvester’s College, Kandy</p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h3 class="item-period">February 8 – January 25</h3>
-
-              <p class="item-title">GCE Advanced Level (A/L)</p>
-
-              <p class="item-address">Kekunagolla National School</p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h3 class="item-period">March 1 - 2027 (Expected)</h3>
-
-              <p class="item-title">BSc (Hons) in Software Engineering</p>
-
-              <p class="item-address">Birmingham City University <br><small>(Java Institute for Advanced Technology)</small></p>
-
-            </li>
-
-          </ul>
-
-        </div>
-      </section>
-
-
-
-
-
-      <!-- 
-        - #PRICING
-      -->
-
-      <section class="section pricing" id="price" aria-label="price">
-        <div class="container">
-
-          <div class="pricing-content">
-
-            <p class="section-subtitle">My</p>
-
-            <h2 class="h2 section-title">Services</h2>
-
-            <p class="section-text">
-             Delivering innovative solutions to bring your digital ideas to life. 
-             From full-stack development to UI/UX design and API integration, I provide expert guidance 
-             and hands-on implementation to make your projects succeed.
-            </p>
-
-          </div>
-
-          <ul class="pricing-list">
-
-            <li>
-              <div class="pricing-card">
-                <ion-icon name="laptop-outline" aria-hidden="true"></ion-icon>
-
-                <h3 class="card-title">Full Stack Development</h3><br>
-              </div>
-            </li>
-
-            <li>
-              <div class="pricing-card">
-                <ion-icon name="color-palette-outline" aria-hidden="true"></ion-icon>
-
-                <h3 class="card-title">UI/UX Design</h3>
-              </div>
-            </li>
-
-            <li>
-              <div class="pricing-card">
-                <ion-icon name="server-outline" aria-hidden="true"></ion-icon>
-
-                <h3 class="card-title">API Integration</h3>
-              </div>
-            </li>
-
-            <li>
-              <div class="pricing-card">
-                <ion-icon name="chatbubble-ellipses-outline" aria-hidden="true"></ion-icon>
-
-                <h3 class="card-title">Technical Consultation</h3>
-              </div>
-            </li>
-
-            <li>
-              <div class="pricing-card">
-                <ion-icon name="logo-wordpress" aria-hidden="true"></ion-icon>
-
-                <h3 class="card-title">Wordpress Development</h3>
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-      </section>
-
-
-      <!-- 
-        - #CONTACT
-      -->
-
-      <section class="section contact" id="contact" aria-label="contact">
-        <div class="container">
-
-          <div class="contact-content">
-
-            <p class="section-subtitle">Contact</p>
-
-            <h2 class="h2 section-title">Get In Touch</h2>
-
-            <p class="section-text">
-              Please fill out the form on this section to contact with me. Or call between 9:00 a.m. and 8:00 p.m. ET,
-              Monday through
-              Friday
-            </p>
-
-            <ul class="contact-list">
-
-              <li class="contact-item">
-                <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
-
-                <address class="contact-link">
-                  Kandy, Sri Lanka
-                </address>
-              </li>
-
-              <li class="contact-item">
-                <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
-
-                <a href="tel:+94 763 301 667" class="contact-link">+94 763 301 667</a>
-              </li>
-
-              <li class="contact-item">
-                <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
-
-                <a href="fhmnx35888@gmail.com" class="contact-link">fhmnx35888@gmail.com</a>
-              </li>
-
-              <li class="contact-item">
-                <ion-icon name="globe-outline" aria-hidden="true"></ion-icon>
-
-                <a href="www.domain.com" class="contact-link">www.fhmnx.com</a>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <form action="" class="contact-form">
-
-            <input type="text" name="name" aria-label="name" placeholder="Name" required class="input-field">
-
-            <input type="email" name="email_address" aria-label="email" placeholder="Email" required
-              class="input-field">
-
-            <textarea name="message" aria-label="message" placeholder="Message" required class="input-field"></textarea>
-
-            <button type="submit" class="submit-btn">
-              <span class="span">Submit</span>
-
-              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+    <div class="bg-blobs" aria-hidden="true">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+      <span class="blob blob-3"></span>
+    </div>
+
+    <!-- HEADER -->
+    <header
+      id="siteHeader"
+      class="fixed top-0 left-0 w-full z-50 border-b border-[color:var(--line)] transition"
+    >
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="h-16 flex items-center justify-between">
+          <a
+            href="#home"
+            class="flex items-center gap-2 font-poppins font-extrabold tracking-tight text-[color:var(--text)]"
+          >
+            Hi, I'm Fahman
+          </a>
+
+          <!-- Desktop Nav -->
+          <nav class="hidden lg:flex items-center gap-2 text-sm">
+            <a class="navlink" href="#home">Home</a>
+            <a class="navlink" href="#about">About</a>
+            <a class="navlink" href="#projects">Projects</a>
+            <a class="navlink" href="#skills">Expertise</a>
+            <a class="navlink" href="#timeline">Process</a>
+            <a class="navlink" href="#contact">Contact</a>
+          </nav>
+
+          <div class="flex items-center gap-2">
+            <button
+              id="themeToggle"
+              class="theme-switch"
+              type="button"
+              role="switch"
+              aria-checked="true"
+              aria-label="Toggle theme"
+            >
+              <span class="ts-icons" aria-hidden="true">
+                <span class="ts-sun">☀</span>
+                <span class="ts-moon">⏾</span>
+              </span>
+              <span class="ts-knob" aria-hidden="true"></span>
             </button>
 
-          </form>
-
+            <!-- Mobile menu button -->
+            <button
+              id="menuBtn"
+              class="lg:hidden h-10 w-10 rounded-xl border border-[color:var(--line)] bg-[color:var(--glass)] hover:opacity-90 transition grid place-items-center"
+              aria-label="Open menu"
+            >
+              <span class="menu-bar"></span>
+              <span class="menu-bar"></span>
+              <span class="menu-bar"></span>
+            </button>
+          </div>
         </div>
-      </section>
 
-    </article>
-  </main>
+        <!-- Mobile Nav -->
+        <div id="mobileNav" class="lg:hidden hidden pb-4">
+          <div class="mobile-card p-3">
+            <a class="mnav" href="#home">Home</a>
+            <a class="mnav" href="#about">About</a>
+            <a class="mnav" href="#projects">Projects</a>
+            <a class="mnav" href="#skills">Expertise</a>
+            <a class="mnav" href="#timeline">Process</a>
+            <a class="mnav" href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </header>
 
+    <!-- HERO -->
+    <section id="home" class="pt-28 pb-16 mt-7">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="grid gap-12 lg:grid-cols-2 items-center">
+          <!-- Left -->
+          <div class="reveal">
+            <p
+              class="uppercase tracking-[0.18em] text-xs font-semibold text-[color:var(--muted)]"
+            >
+              Full-Stack Software Engineer | Secure & Scalable Business
+              Applications
+            </p>
 
+            <h1
+              class="mt-3 font-poppins font-extrabold leading-tight text-4xl sm:text-5xl text-[color:var(--text)]"
+            >
+              Turning Business Ideas Into
+              <span class="grad-text">Powerful Modern</span> Web Solutions
+            </h1>
 
+            <p class="mt-4 max-w-xl text-[color:var(--muted)]">
+              Specialized in Java/Spring Boot and React, I build secure business
+              systems, POS platforms, and custom web applications designed to
+              improve efficiency and drive growth.
+            </p>
 
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a
+                href="#projects"
+                class="inline-flex items-center gap-2 rounded-full px-4 py-2 font-semibold text-white bg-gradient-to-r from-purpleA to-purpleB shadow-[0_20px_60px_rgba(124,58,237,.25)] hover:-translate-y-0.5 transition"
+              >
+                View My Work <span>→</span>
+              </a>
 
-  <!-- 
-    - #FOOTER
-  -->
+              <a
+                href="#contact"
+                class="inline-flex items-center gap-2 rounded-full px-4 py-2 font-semibold border border-[color:var(--line)] bg-[color:var(--glass)] hover:-translate-y-0.5 transition text-[color:var(--text)]"
+              >
+                Contact
+              </a>
 
-  <footer class="footer">
-    <div class="container">
+              <a
+                href="resume.pdf"
+                download
+                class="inline-flex items-center gap-2 rounded-full px-4 py-2 font-semibold border border-[color:var(--line)] bg-transparent hover:bg-[color:var(--glass)] transition text-[color:var(--text)]"
+              >
+                Download Resume
+              </a>
+            </div>
 
-      <p class="copyright">
-        Fahman 2025 © All Rights Reserved <a href="#" class="copyright-link">FHMNx</a>
-      </p>
+            <div class="mt-7 flex flex-wrap gap-2">
+              <span class="chip">Java</span>
+              <span class="chip">Spring Boot</span>
+              <span class="chip">Node</span>
+              <span class="chip">MongoDB</span>
+              <span class="chip">Automation</span>
+              <span class="chip">React</span>
+            </div>
+          </div>
 
-      <ul class="social-list">
+          <!-- Right photo -->
+          <div class="reveal grid place-items-center">
+            <div
+              class="relative w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] hero-photo"
+            >
+              <!-- floating syntax particles -->
+              <div class="syntax-layer" aria-hidden="true">
+                <span class="syntax s1">&gt;</span>
+                <span class="syntax s2">#</span>
+                <span class="syntax s3">@</span>
+                <span class="syntax s4">{ }</span>
+                <span class="syntax s5">&lt;/&gt;</span>
+                <span class="syntax s6">_</span>
+              </div>
+              <!-- arrows -->
+              <div class="pointer-events-none absolute inset-0">
+                <div
+                  class="absolute left-1 top-4 text-[color:var(--muted2)] text-2xl font-bold select-none"
+                >
+                  &lt;
+                </div>
+                <div
+                  class="absolute right-4 bottom-5 text-[color:var(--muted2)] text-2xl font-bold select-none"
+                >
+                  &gt;
+                </div>
+              </div>
 
-        <li>
-          <a href="#" class="social-link">
-            <ion-icon name="logo-facebook"></ion-icon>
+              <!-- glow -->
+              <div
+                class="absolute -inset-12 rounded-full blur-3xl opacity-35"
+                style="
+                  background: radial-gradient(
+                    circle at 30% 30%,
+                    rgba(168, 85, 247, 0.55),
+                    transparent 60%
+                  );
+                "
+              ></div>
+
+              <!-- animated ring -->
+              <div class="absolute inset-0 rounded-full ring-animated"></div>
+
+              <!-- inner circle -->
+              <div
+                class="absolute inset-[10px] rounded-full overflow-hidden bg-[color:var(--bg2)] border border-[color:var(--line)]"
+              >
+                <img
+                  src="fahman.png"
+                  alt="Fahman"
+                  class="w-full h-full object-cover object-center"
+                />
+                <div class="absolute inset-0 bg-black/10"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-16">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="reveal">
+          <p class="sec-sub">About</p>
+          <h2 class="sec-title">What I Do</h2>
+        </div>
+
+        <div class="mt-6 grid gap-4 lg:grid-cols-3">
+          <div class="glass p-6 lg:col-span-2 reveal">
+            <p class="text-[color:var(--muted)]">
+              I’m a Full-Stack Software Engineer focused on building
+              <span class="text-[color:var(--text)]"
+                >secure, scalable business applications</span
+              >. I help startups and small businesses turn ideas into real
+              products — from modern UI to reliable backend APIs and database
+              design. My work is built around clean code, performance, and
+              security-first thinking.
+            </p>
+
+            <p class="mt-4 text-[color:var(--muted)]">
+              I also specialize in
+              <span class="text-[color:var(--text)]"
+                >automation and workflow systems</span
+              >
+              — reducing manual work by integrating APIs, building admin
+              dashboards, and streamlining business operations.
+            </p>
+
+            <div class="mt-6 grid sm:grid-cols-3 gap-3">
+              <div class="mini">
+                <div class="mini-k">What I Build</div>
+                <div class="mini-v">Business Web Apps + POS</div>
+              </div>
+              <div class="mini">
+                <div class="mini-k">Specialty</div>
+                <div class="mini-v">Automation + API Integrations</div>
+              </div>
+              <div class="mini">
+                <div class="mini-k">What You Get</div>
+                <div class="mini-v">Clean UI, Secure Backend</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass p-6 reveal">
+            <h3 class="font-poppins font-bold text-lg text-[color:var(--text)]">
+              Highlights
+            </h3>
+            <ul class="mt-4 space-y-3 text-[color:var(--muted)]">
+              <li class="flex gap-2">
+                <span class="text-purple-200">✓</span> Business Systems: POS,
+                Admin Panels, Dashboards
+              </li>
+              <li class="flex gap-2">
+                <span class="text-purple-200">✓</span> Automation: Workflow
+                tools, API integrations
+              </li>
+              <li class="flex gap-2">
+                <span class="text-purple-200">✓</span> Clean UI/UX with
+                responsive layouts
+              </li>
+              <li class="flex gap-2">
+                <span class="text-purple-200">✓</span> Security mindset:
+                validation, access control
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-16">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="reveal">
+          <p class="sec-sub">Portfolio</p>
+          <h2 class="sec-title">Selected Client Projects</h2>
+          <p class="mt-3 max-w-2xl text-[color:var(--muted)]">
+            Real-world business systems built to improve operations, increase
+            efficiency, and deliver reliable digital solutions.
+          </p>
+        </div>
+
+        <div class="mt-8 relative reveal">
+          <button
+            type="button"
+            class="proj-btn hidden md:grid place-items-center"
+            id="projPrev"
+            aria-label="Previous projects"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            class="proj-btn hidden md:grid place-items-center"
+            id="projNext"
+            aria-label="Next projects"
+          >
+            ›
+          </button>
+
+          <div
+            id="projectsTrack"
+            class="projects-track"
+            tabindex="0"
+            aria-label="Projects slider"
+          >
+            <a
+              class="project-card snap"
+              href="https://github.com/FHMNx"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="asairasai.png"
+                alt="Restaurant Ordering Platform"
+                class="project-img"
+              />
+              <div class="p-5">
+                <h3
+                  class="font-poppins font-bold text-lg text-[color:var(--text)]"
+                >
+                  Multi-Vendor Ordering Platform
+                </h3>
+                <p class="mt-2 text-sm text-[color:var(--muted)]">
+                  A complete online food ordering system allowing multiple
+                  vendors to manage products, orders, and customers through a
+                  centralized dashboard.
+                </p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="chip-sm">Admin Dashboard</span>
+                  <span class="chip-sm">Secure Authentication</span>
+                  <span class="chip-sm">Order Management</span>
+                </div>
+              </div>
+            </a>
+
+            <a
+              class="project-card snap"
+              href="https://github.com/FHMNx"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="hospital.jpg"
+                alt="Pharmacy Management System"
+                class="project-img"
+              />
+              <div class="p-5">
+                <h3
+                  class="font-poppins font-bold text-lg text-[color:var(--text)]"
+                >
+                  Pharmacy Management System
+                </h3>
+                <p class="mt-2 text-sm text-[color:var(--muted)]">
+                  A business-ready system for managing inventory, billing,
+                  prescriptions, and customer records with real-time tracking.
+                </p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="chip-sm">Inventory Control</span>
+                  <span class="chip-sm">Billing System</span>
+                  <span class="chip-sm">User Roles</span>
+                </div>
+              </div>
+            </a>
+
+            <a
+              class="project-card snap"
+              href="https://github.com/FHMNx"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="fashion.png"
+                alt="E-commerce Platform"
+                class="project-img"
+              />
+              <div class="p-5">
+                <h3
+                  class="font-poppins font-bold text-lg text-[color:var(--text)]"
+                >
+                  E-Commerce Web Platform
+                </h3>
+                <p class="mt-2 text-sm text-[color:var(--muted)]">
+                  A modern online store interface designed for smooth browsing,
+                  product showcasing, and responsive user experience.
+                </p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="chip-sm">Responsive UI</span>
+                  <span class="chip-sm">Product Management</span>
+                  <span class="chip-sm">Clean UX</span>
+                </div>
+              </div>
+            </a>
+
+            <a
+              class="project-card snap"
+              href="https://github.com/FHMNx"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="greek.png"
+                alt="Clothing Business System"
+                class="project-img"
+              />
+              <div class="p-5">
+                <h3
+                  class="font-poppins font-bold text-lg text-[color:var(--text)]"
+                >
+                  Clothing Store Business System
+                </h3>
+                <p class="mt-2 text-sm text-[color:var(--muted)]">
+                  A digital solution for managing products, orders, and customer
+                  interactions for a growing fashion brand.
+                </p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="chip-sm">Order Processing</span>
+                  <span class="chip-sm">Admin Panel</span>
+                  <span class="chip-sm">Secure Payments</span>
+                </div>
+              </div>
+            </a>
+
+            <a
+              class="project-card snap"
+              href="https://github.com/FHMNx"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="kns.png"
+                alt="School Management System"
+                class="project-img"
+              />
+              <div class="p-5">
+                <h3
+                  class="font-poppins font-bold text-lg text-[color:var(--text)]"
+                >
+                  School Management System
+                </h3>
+                <p class="mt-2 text-sm text-[color:var(--muted)]">
+                  A centralized system to manage records, operations, and
+                  workflows efficiently with role-based access.
+                </p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="chip-sm">Records</span>
+                  <span class="chip-sm">Scheduling</span>
+                  <span class="chip-sm">Role Management</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="proj-fade-left" aria-hidden="true"></div>
+          <div class="proj-fade-right" aria-hidden="true"></div>
+        </div>
+
+        <div class="mt-6 flex justify-center reveal">
+          <a
+            href="https://github.com/FHMNx"
+            target="_blank"
+            rel="noreferrer"
+            class="inline-flex items-center gap-2 rounded-full px-5 py-3 font-semibold border border-[color:var(--line)] bg-[color:var(--glass)] hover:opacity-90 transition text-[color:var(--text)]"
+          >
+            View More Projects <span>→</span>
           </a>
-        </li>
+        </div>
+      </div>
+    </section>
 
-        <li>
-          <a href="#" class="social-link">
-            <ion-icon name="logo-twitter"></ion-icon>
-          </a>
-        </li>
+    <!-- SKILLS -->
+    <section id="skills" class="py-16">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="reveal">
+          <p class="sec-sub">Expertise</p>
+          <h2 class="sec-title">What I Bring To Your Project</h2>
+          <p class="mt-3 max-w-2xl text-[color:var(--muted)]">
+            I build secure, scalable, and performance-focused applications
+            designed to solve real business problems.
+          </p>
+        </div>
 
-        <li>
-          <a href="https://www.instagram.com/fhmn_ahmd?igsh=MXFpNzRtMWV5eHY5dg==" class="social-link">
-            <ion-icon name="logo-instagram"></ion-icon>
-          </a>
-        </li>
+        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="glass p-6 reveal">
+            <h3 class="font-poppins font-bold text-lg text-[color:var(--text)]">
+              Full-Stack Development
+            </h3>
+            <p class="mt-2 text-sm text-[color:var(--muted)]">
+              Complete web applications from frontend interface to backend logic
+              and database design.
+            </p>
+          </div>
 
-        <li>
-          <a href="#" class="social-link">
-            <ion-icon name="logo-dribbble"></ion-icon>
-          </a>
-        </li>
+          <div class="glass p-6 reveal">
+            <h3 class="font-poppins font-bold text-lg text-[color:var(--text)]">
+              Business Systems
+            </h3>
+            <p class="mt-2 text-sm text-[color:var(--muted)]">
+              POS systems, dashboards, admin panels, inventory and workflow
+              management solutions.
+            </p>
+          </div>
 
-        <li>
-          <a href="https://github.com/FHMNx" class="social-link">
-            <ion-icon name="logo-github"></ion-icon>
-          </a>
-        </li>
+          <div class="glass p-6 reveal">
+            <h3 class="font-poppins font-bold text-lg text-[color:var(--text)]">
+              Automation & Integrations
+            </h3>
+            <p class="mt-2 text-sm text-[color:var(--muted)]">
+              API integrations and workflow automation to reduce manual work and
+              increase efficiency.
+            </p>
+          </div>
 
-      </ul>
+          <div class="glass p-6 reveal">
+            <h3 class="font-poppins font-bold text-lg text-[color:var(--text)]">
+              Secure Architecture
+            </h3>
+            <p class="mt-2 text-sm text-[color:var(--muted)]">
+              Authentication, role-based access control, validation, and secure
+              coding practices.
+            </p>
+          </div>
 
-    </div>
-  </footer>
+          <div class="glass p-6 reveal">
+            <h3 class="font-poppins font-bold text-lg text-[color:var(--text)]">
+              Modern UI / UX
+            </h3>
+            <p class="mt-2 text-sm text-[color:var(--muted)]">
+              Clean, responsive, premium-looking interfaces built for real
+              users.
+            </p>
+          </div>
 
+          <div class="glass p-6 reveal">
+            <h3 class="font-poppins font-bold text-lg text-[color:var(--text)]">
+              Performance Optimization
+            </h3>
+            <p class="mt-2 text-sm text-[color:var(--muted)]">
+              Fast loading, optimized queries, and scalable backend structures.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- PROCESS -->
+    <section id="timeline" class="py-16">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="reveal">
+          <p class="sec-sub">Process</p>
+          <h2 class="sec-title">How I Work</h2>
+          <p class="mt-3 max-w-2xl text-[color:var(--muted)]">
+            Clear communication, clean delivery, and fast iterations — so you
+            always know what’s happening.
+          </p>
+        </div>
 
+        <div class="mt-8 grid gap-3 lg:grid-cols-2">
+          <div class="glass p-5 reveal">
+            <div class="text-purple-200 font-semibold">01 · Understand</div>
+            <div class="font-poppins font-bold mt-1 text-[color:var(--text)]">
+              Requirements & Goals
+            </div>
+            <div class="text-sm mt-2 text-[color:var(--muted)]">
+              We clarify what you need, what success looks like, and what the
+              final output should be.
+            </div>
+          </div>
 
+          <div class="glass p-5 reveal">
+            <div class="text-purple-200 font-semibold">02 · Plan</div>
+            <div class="font-poppins font-bold mt-1 text-[color:var(--text)]">
+              UI + System Design
+            </div>
+            <div class="text-sm mt-2 text-[color:var(--muted)]">
+              I design the flow, database structure, and key screens before
+              building — no surprises later.
+            </div>
+          </div>
 
-  <!-- 
-    - custom js link
-  -->
-  <script src="script.js" defer></script>
+          <div class="glass p-5 reveal">
+            <div class="text-purple-200 font-semibold">03 · Build</div>
+            <div class="font-poppins font-bold mt-1 text-[color:var(--text)]">
+              Development & Integration
+            </div>
+            <div class="text-sm mt-2 text-[color:var(--muted)]">
+              Clean UI, secure APIs, and smooth integrations (payments, email,
+              automation, dashboards).
+            </div>
+          </div>
 
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+          <div class="glass p-5 reveal">
+            <div class="text-purple-200 font-semibold">04 · Deliver</div>
+            <div class="font-poppins font-bold mt-1 text-[color:var(--text)]">
+              Testing + Launch Support
+            </div>
+            <div class="text-sm mt-2 text-[color:var(--muted)]">
+              Bug fixes, final testing, deployment help, and a clear handover so
+              you can run it confidently.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</body>
+    <!-- CONTACT -->
+    <section id="contact" class="py-16">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="reveal">
+          <p class="sec-sub">Contact</p>
+          <h2 class="sec-title">Let’s Build Something Great</h2>
+          <p class="mt-3 max-w-2xl text-[color:var(--muted)]">
+            Have a project in mind? Need a business system, automation, or a
+            custom web platform? Let’s discuss your requirements and turn your
+            idea into a reliable solution.
+          </p>
+        </div>
 
+        <div class="mt-8 grid gap-6 lg:grid-cols-2 items-start">
+          <div class="glass p-6 reveal">
+            <h3 class="font-poppins font-bold text-lg text-[color:var(--text)]">
+              Connect With Me
+            </h3>
+            <p class="mt-3 text-sm text-[color:var(--muted)]">
+              Quick response via WhatsApp or Email. Available worldwide.
+            </p>
 
+            <div class="mt-6 flex flex-wrap gap-4">
+              <a
+                href="https://wa.me/94753837635"
+                target="_blank"
+                class="contact-icon"
+                aria-label="WhatsApp"
+              >
+                <ion-icon name="logo-whatsapp"></ion-icon>
+              </a>
+
+              <a
+                href="mailto:fhmnx35888@gmail.com"
+                class="contact-icon"
+                aria-label="Email"
+              >
+                <ion-icon name="mail-outline"></ion-icon>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/fhmn/"
+                target="_blank"
+                class="footer-icon"
+                aria-label="LinkedIn"
+              >
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+
+              <a
+                href="https://github.com/FHMNx"
+                target="_blank"
+                class="contact-icon"
+                aria-label="GitHub"
+              >
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+            </div>
+
+            <div
+              class="mt-6 rounded-xl border border-[color:var(--line)] bg-[color:var(--glass)] p-4 text-sm text-[color:var(--muted)]"
+            >
+              Usually replies within 24 hours.
+            </div>
+          </div>
+
+          <form
+            class="glass p-6 reveal"
+            onsubmit="
+              event.preventDefault();
+              alert(
+                'Connect this form to EmailJS or your backend for production.',
+              );
+            "
+          >
+            <h3 class="font-poppins font-bold text-lg text-[color:var(--text)]">
+              Send a Message
+            </h3>
+
+            <div class="mt-4 grid gap-4 sm:grid-cols-2">
+              <input class="field" placeholder="Full Name" required />
+              <input
+                class="field"
+                placeholder="Email Address"
+                type="email"
+                required
+              />
+            </div>
+
+            <input
+              class="field mt-4"
+              placeholder="Project Type (e.g. Business System, Website, Automation)"
+            />
+
+            <textarea
+              class="field mt-4 min-h-[140px]"
+              placeholder="Briefly describe your project requirements..."
+              required
+            ></textarea>
+
+            <button
+              class="mt-6 w-full rounded-full px-5 py-3 font-semibold text-white bg-gradient-to-r from-purpleA to-purpleB hover:-translate-y-0.5 transition"
+            >
+              Start Project Discussion →
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-[color:var(--line)] py-10 mt-10">
+      <div class="mx-auto max-w-6xl px-5">
+        <div
+          class="grid gap-8 md:grid-cols-3 items-start text-[color:var(--muted)]"
+        >
+          <div>
+            <div
+              class="font-poppins font-bold text-lg text-[color:var(--text)]"
+            >
+              Fahman
+            </div>
+            <p class="mt-3 text-sm text-[color:var(--muted2)] max-w-xs">
+              Full-Stack Software Engineer building secure, scalable, and
+              automation-focused business applications.
+            </p>
+          </div>
+
+          <div>
+            <div class="font-semibold text-[color:var(--text)] text-sm mb-3">
+              Quick Links
+            </div>
+            <div class="flex flex-col gap-2 text-sm">
+              <a href="#projects" class="footer-link">Projects</a>
+              <a href="#timeline" class="footer-link">Process</a>
+              <a href="#contact" class="footer-link">Contact</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="font-semibold text-[color:var(--text)] text-sm mb-3">
+              Connect
+            </div>
+            <div class="flex gap-4 text-xl">
+              <a
+                href="https://github.com/FHMNx"
+                target="_blank"
+                class="footer-icon"
+                aria-label="GitHub"
+              >
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/fhmn/"
+                target="_blank"
+                class="footer-icon"
+                aria-label="LinkedIn"
+              >
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+
+              <a
+                href="mailto:fhmnx35888@gmail.com"
+                class="contact-icon"
+                aria-label="Email"
+              >
+                <ion-icon name="mail-outline"></ion-icon>
+              </a>
+
+              <a
+                href="https://wa.me/94753837635"
+                target="_blank"
+                class="footer-icon"
+                aria-label="WhatsApp"
+              >
+                <ion-icon name="logo-whatsapp"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="mt-10 pt-6 border-t border-[color:var(--line)] text-center text-sm text-[color:var(--muted2)]"
+        >
+          © 2025 Fahman · Designed & Built By Fahman
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>
-
-
-
-
