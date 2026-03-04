@@ -153,3 +153,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+const contactForm = document.getElementById("contactForm");
+const formMsg = document.getElementById("formMsg");
+
+contactForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  formMsg?.classList.remove("hidden");
+  contactForm.reset();
+  setTimeout(() => {
+    formMsg?.classList.add("hidden");
+  }, 6000);
+});
+
