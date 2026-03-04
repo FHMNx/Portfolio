@@ -715,46 +715,38 @@
             </div>
           </div>
 
-          <form
-            class="glass p-6 reveal"
-            onsubmit="
-              event.preventDefault();
-              alert(
-                'Connect this form to EmailJS or your backend for production.',
-              );
-            "
-          >
-            <h3 class="font-poppins font-bold text-lg text-[color:var(--text)]">
-              Send a Message
-            </h3>
+         <form id="contactForm" class="glass p-6 reveal">
+  <h3 class="font-poppins font-bold text-lg text-[color:var(--text)]">
+    Send a Message
+  </h3>
 
-            <div class="mt-4 grid gap-4 sm:grid-cols-2">
-              <input class="field" placeholder="Full Name" required />
-              <input
-                class="field"
-                placeholder="Email Address"
-                type="email"
-                required
-              />
-            </div>
+  <div class="mt-4 grid gap-4 sm:grid-cols-2">
+    <input class="field" placeholder="Full Name" required />
+    <input class="field" placeholder="Email Address" type="email" required />
+  </div>
 
-            <input
-              class="field mt-4"
-              placeholder="Project Type (e.g. Business System, Website, Automation)"
-            />
+  <input
+    class="field mt-4"
+    placeholder="Project Type (e.g. Business System, Website, Automation)"
+  />
 
-            <textarea
-              class="field mt-4 min-h-[140px]"
-              placeholder="Briefly describe your project requirements..."
-              required
-            ></textarea>
+  <textarea
+    class="field mt-4 min-h-[140px]"
+    placeholder="Briefly describe your project requirements..."
+    required
+  ></textarea>
 
-            <button
-              class="mt-6 w-full rounded-full px-5 py-3 font-semibold text-white bg-gradient-to-r from-purpleA to-purpleB hover:-translate-y-0.5 transition"
-            >
-              Start Project Discussion →
-            </button>
-          </form>
+  <div id="formMsg" class="form-msg hidden mt-4">
+     We have received your message! For a faster reply, please contact via WhatsApp as well.
+  </div>
+
+  <button
+    class="mt-6 w-full rounded-full px-5 py-3 font-semibold text-white bg-gradient-to-r from-purpleA to-purpleB hover:-translate-y-0.5 transition"
+  >
+    Send Message →
+  </button>
+</form>
+          
         </div>
       </div>
     </section>
@@ -851,3 +843,4 @@
     ></script>
   </body>
 </html>
+
