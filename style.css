@@ -561,3 +561,12 @@ html[data-theme="light"] .syntax {
     box-shadow: none !important;
   }
 }
+
+.form-msg{
+  border: 1px solid rgba(32, 120, 46, 0.3);
+  background: rgba(37, 168, 16, 0.1);
+  color: var(--text);
+  padding: 12px 14px;
+  border-radius: 14px;
+}
+
